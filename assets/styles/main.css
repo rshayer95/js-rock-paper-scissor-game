@@ -1,0 +1,272 @@
+:root {
+    --green: #5bb486;
+    --parrot: #f0682c;
+    --blue: #2291fd;
+    --dark-grey: #333;
+}
+
+* {
+    margin: 0;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+}
+
+html {
+    background: #fafafa;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+button {
+    border: none;
+    background: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--dark-grey);
+}
+
+button::-moz-focus-inner {
+    border: none;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.16),
+        0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.mt-1 {
+    margin-top: 1rem !important;
+}
+
+.mb-1 {
+    margin-bottom: 1rem !important;
+}
+
+.text-green {
+    color: var(--green) !important;
+}
+
+.text-dark {
+    color: var(--dark-grey) !important;
+}
+
+.text-parrot {
+    color: var(--parrot) !important;
+}
+
+.text-blue {
+    color: var(--blue) !important;
+}
+
+.instruction {
+    width: 100%;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.instruction p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.Board {
+    width: 100%;
+    position: relative;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.scores {
+    font-size: 2.5rem;
+    color: var(--blue);
+    margin: 10px auto;
+}
+
+.scoreBoard {
+    background: #fff;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.scoreBoard:nth-of-type(1) {
+    border-radius: 0 60px 60px 0;
+}
+
+.scoreBoard:nth-of-type(2) {
+    border-radius: 60px 0 0 60px;
+}
+
+.sub-title {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.row .choice-btn {
+    flex: 1;
+}
+
+.choice-btn {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 15px 10px;
+    font-size: 1.2rem;
+}
+
+.choice-btn:hover,
+.choice-btn:active,
+.choice-btn:focus {
+    background: #f1f1f1;
+}
+
+.choice-btn i {
+    margin: 10px auto;
+}
+
+.info-btn {
+    background: rgba(34, 145, 253, 0.1);
+    color: var(--blue);
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.info-btn:hover,
+.info-btn:active,
+.info-btn:focus {
+    background: rgba(34, 145, 253, 0.2);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.popup {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup #modal {
+    background: #fff;
+    padding: 10px;
+    min-height: 200px;
+    width: 350px;
+    animation: open 0.3s ease;
+    -webkit-animation: open 0.3s ease;
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@-webkit-keyframes open {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes open {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@-ms-keyframes open {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes open {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media only screen and (max-width: 605px) {
+    #reset {
+        width: calc(100% - 20px);
+        height: 50px;
+        margin: auto;
+    }
+
+    .Board {
+        width: 100%;
+    }
+
+    .scoreBoard {
+        flex: auto;
+        width: 100%;
+        border-radius: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 435px) {
+    .row .choice-btn {
+        flex: auto;
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+}
